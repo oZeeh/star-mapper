@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comprar sua estrela de Dyson</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="header-style.css" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+      <button id="menu">Menu</button>
+    </header>
+  
+    <div id="title" class="title">
+      <h1>Mapa de compra</h1>
+      Arraste pelo mapa para selecionar a estrela desejada
+    </div>
+  
+    <div id="universe-container" class="fullscreen">
+      <div id="universe"></div>
+    </div>
+  
+    <div id="hud" hidden>
+      <strong id="star-name"></strong><br>
+      Tipo: <span id="star-type"></span><br>
+      Preço: <span id="star-temp"></span><br>
+      <button id="colonize-btn">
+        Adicionar ao carrinho 
+        <span class="material-icons">shopping_cart</span>
+      </button>
+    </div>
+  
+    <script src="script.js"></script>
+  </body>
+</html>

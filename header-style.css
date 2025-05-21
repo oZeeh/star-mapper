@@ -1,0 +1,17 @@
+.title {
+    position: sticky;
+    top: 0;
+    background-color: transparent; /* 'none' is invalid */
+    color: #fff;
+    padding: 15px 20px;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  
+  .title.hidden {
+    opacity: 0;
+    pointer-events: none; /* Optional: so it doesn't catch mouse events when hidden */
+  }

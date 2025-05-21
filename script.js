@@ -2,6 +2,25 @@ function randomInt(max){
     return Math.floor(Math.random() * max)
 }
 
+function formatMoney(unformattedString) {
+  const string = unformattedString.toString();
+
+  const numeric = string.replace(/[^\d,.-]/g, '').replace(',', '.');
+
+  const amount = parseFloat(numeric);
+
+  if (isNaN(amount)) {
+    return 'Valor inválido';
+  }
+
+  return amount.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
 const universe = document.getElementById('universe');
 const hud = document.getElementById('hud');
 const colonizedStars = JSON.parse(localStorage.getItem('colonizedStars') || '{}');
@@ -18,10 +37,10 @@ function generateStarData() {
   const name = `${prefix} - ${Math.floor(Math.random() * 1000)}`;
   const type = types[Math.floor(Math.random() * types.length)];
 
-  const temp = 'R$ ' + (3000 + Math.floor(Math.random() * 10000)) + 'M';
+  const value = formatMoney((3000 + Math.floor(Math.random() * 10000)));
   const hue = Math.floor(Math.random() * 240); // vermelho (0) a azul (240)
   const color = `hsl(${hue}, 100%, 70%)`;
-  return { name, type, temp, color };
+  return { name, type, value, color };
 }
 
 for (let i = 0; i < 300; i++) {
@@ -33,7 +52,7 @@ for (let i = 0; i < 300; i++) {
   star.dataset.id = id;
   star.dataset.name = starData.name;
   star.dataset.type = starData.type;
-  star.dataset.temp = starData.temp;
+  star.dataset.value = starData.value;
 
   star.style.backgroundColor = starData.color;
   star.style.color = starData.color;
@@ -70,7 +89,7 @@ for (let i = 0; i < 300; i++) {
 function showStarData(starData, id, star) {
   document.getElementById('star-name').textContent = starData.name;
   document.getElementById('star-type').textContent = starData.type;
-  document.getElementById('star-temp').textContent = starData.temp;
+  document.getElementById('star-value').textContent = starData.value;
 
   document.getElementById('colonize-btn').onclick = () => {
     star.classList.add('colonized');
@@ -114,10 +133,15 @@ document.addEventListener('mouseup', () => {
   universe.style.cursor = 'grab';
 });
 
+document.getElementById('menu')
+    .addEventListener('click', openMenu)
+
 function openMenu() {
     console.log(colonizedStars);
+    const cart = document.getElementById('cart');
+    const cartContent = document.getElementById('cartContent');
+    cart.hidden = !cart.hidden;
+    cartContent.innerHTML = JSON.stringify(colonizedStars)
     
 }
 
-document.getElementById('menu')
-    .addEventListener('click', openMenu)

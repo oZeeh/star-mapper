@@ -6,21 +6,29 @@
   <title>Comprar sua estrela de Dyson</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="header-style.css" />
+  <link rel="stylesheet" href="fonts.css" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
-<body>
 
-    <header>
-      <button id="menu">Menu</button>
-      <div id="cart" hidden>
-        <p id="cartContent"></p>
-      </div>
-    </header>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="sem logo :(">  
+      <h2 class="ubuntu-bold">LuxMagnus</h2>
+    </div>
+
+    <button id="menu">
+      <span class="material-icons">menu</span>
+    </button>
+  
+    <div id="cart" hidden>
+      <p id="cartContent"></p>
+    </div>
+  </header>
   
     <div id="title" class="title">
-      <h1>Mapa de compra</h1>
+      <h1 class="ubuntu-bold">Mapa de compra</h1>
       Arraste pelo mapa para selecionar a estrela desejada
     </div>
   
@@ -28,7 +36,7 @@
       <div id="universe"></div>
     </div>
   
-    <div id="hud" hidden>
+    <div id="hud" class="ubuntu-regular" hidden>
       <strong id="star-name"></strong><br>
       Tipo: <span id="star-type"></span><br>
       Preço: <span id="star-value"></span><br>

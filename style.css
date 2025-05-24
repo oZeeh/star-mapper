@@ -6,10 +6,16 @@ body {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding-top: 60px; /* reserva espaço para a header fixa */
+  padding-top: 60px; 
 }
 
 /* ======== HEADER COM BOTÃO ======== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -18,20 +24,33 @@ header {
   height: 60px;
   background: #111;
   display: flex;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1001;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  justify-content: flex-end; 
+  align-items: center;       
+  padding: 0 20px;           
+  z-index: 1000;
 }
 
+/* Botão */
 button {
-  background-color: #333;
-  color: white;
+  background: #333;
+  color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 5px;
-  font-size: 14px;
   cursor: pointer;
+  font-size: 14px;
+}
+
+#cart {
+  position: absolute; 
+  top: 60px;          
+  right: 20px;       
+  background: rgba(20, 20, 20, 0.95);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  z-index: 1100;      /* mais alto que o universo */
 }
 
 /* ======== TÍTULO (fora da header) ======== */
@@ -56,7 +75,7 @@ button {
 
 #universe-container.fullscreen {
   position: fixed;
-  top: 60px; /* abaixo da header */
+  top: 60px;
   left: 0;
   width: 100vw;
   height: calc(100vh - 60px); /* ocupa o resto da tela */
@@ -121,4 +140,18 @@ button {
 .colonized {
   box-shadow: 0 0 10px 3px lime !important;
   border: 2px solid lime;
+}
+
+.brand {
+  display: flex;
+  align-items: center;  /* Centraliza verticalmente */
+  gap: 10px;            /* Espaço entre a logo e o texto */
+  margin-right: auto;
+}
+
+.brand img {
+  height: 100%;         /* Ajusta pra altura máxima da .brand */
+  max-height: 60px;     /* Ajuste conforme o tamanho que quiser */
+  width: auto;          /* Mantém a proporção */
+  object-fit: contain;  /* Evita deformações */
 }

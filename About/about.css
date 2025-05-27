@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+    line-height: 1.6;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #7353BA; 
+  }
+
+  h2 .about-title {
+    color: inherit;
+    margin: 0;
+  }
+
+  h2:not(.about-title),
+  h3:not(.about-title) {
+    margin-bottom: 20px;
+    color: #AB85FF; 
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2:not(.title) {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  ul li::before {
+    content: '☼';
+    position: absolute;
+    left: 0;
+    color: #ff0;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .about-visual {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #7353BA, #000);
+    border-radius: 12px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px #7353BA;
+  }
+  
+  footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  a {
+    color: #7353BA;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .highlight {
+    color: #7353BA;
+    font-weight: bold;
+  }
+  
+  /* Container fixo para o fundo */
+.background-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fica atrás de tudo */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Estilo das estrelas */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Animação de brilho */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+}

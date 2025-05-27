@@ -1,3 +1,5 @@
+import { setupHeaderToggle } from '../headerToggle.js';
+
 const chat = document.getElementById('chat');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
@@ -118,3 +120,5 @@ document.getElementById('send-btn').addEventListener('click', () => {
     reactRobot();
     blinkEyes();
 });
+
+setupHeaderToggle()
